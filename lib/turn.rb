@@ -1,15 +1,15 @@
 require './lib/card'
+require pry
 
 class Turn
-  attr_accessor :question, :answer, :category, :guess
+  attr_accessor :string, :guess
 
-  def initialize(string, card)
+  def initialize(string, Card)
     @guess = string
-    card = Card.new
   end
 
   def guess
-
+    @guess = string
   end
 
   def card
