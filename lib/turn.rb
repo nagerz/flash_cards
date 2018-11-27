@@ -1,19 +1,11 @@
-require './lib/card'
-require pry
+#require './lib/card.rb'
 
 class Turn
-  attr_accessor :string, :guess
+  attr_reader :string, :guess, :card
 
-  def initialize(string, Card)
+  def initialize(string, card)
     @guess = string
-  end
-
-  def guess
-    @guess = string
-  end
-
-  def card
-
+    @card = card
   end
 
   def correct?
@@ -21,7 +13,7 @@ class Turn
   end
 
   def feedback
-    if correct? == true
+    if turn.correct? == true
       puts "Correct!"
     else
       puts "Incorrect."
