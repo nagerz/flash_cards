@@ -18,7 +18,7 @@ class Round
     #   @number_correct += 1
     # end
     #@turn_counter += 1
-    @current_card = deck.cards[@turn.count]
+    @current_card = deck.cards[@turns.count]
     new_turn
   end
 
@@ -50,7 +50,7 @@ class Round
       number_correct += 1.0
     end
     end
-    return (number_correct / total) * 100
+    return ((number_correct / total) * 100).round(1)
   end
 
   def percent_correct_by_category(category)
@@ -67,7 +67,7 @@ class Round
     if cat_total == 0
       return "#{cat_total} (out of 0)"
     else
-    return (number_correct_category / cat_total) * 100
+    return ((number_correct_category / cat_total) * 100).round(1)
     end
   end
 
