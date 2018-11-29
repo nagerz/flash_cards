@@ -1,12 +1,14 @@
+require './lib/turn'
+
 class Round
   attr_reader :deck, :turns, :current_card, :number_correct
 
   def initialize(deck)
     @deck = deck
     @turns = []
-    @number_correct = 0
-    @turn_counter = 0
-    @current_card = deck.cards[@turn_counter]
+    #@number_correct = 0
+    #@turn_counter = 0
+    @current_card = deck.cards[@turns.count]
   end
 
   def take_turn(string)
@@ -15,8 +17,8 @@ class Round
     # if new_turn.correct? == true
     #   @number_correct += 1
     # end
-    @turn_counter += 1
-    @current_card = deck.cards[@turn_counter]
+    #@turn_counter += 1
+    @current_card = deck.cards[@turn.count]
     new_turn
   end
 
@@ -62,7 +64,19 @@ class Round
       end
     end
     end
+    if cat_total == 0
+      return "#{cat_total} (out of 0)"
+    else
     return (number_correct_category / cat_total) * 100
+    end
   end
 
+  def start
+    puts "Welcome! You're playing with 4 cards."
+    puts "---------------------------"
+  end
+
+  def end
+    puts "****** Game over! ******"
+  end
 end

@@ -14,11 +14,10 @@ class Deck
     @cards.each do |card|
       if card.category == category
         cards_in_category << card
-      else
-        next
       end
     end
-  return cards_in_category
+    #find_all / select methods
+    return cards_in_category
   end
 
 end
