@@ -72,7 +72,7 @@ class Round
   end
 
   def start
-    puts "Welcome! You're playing with 4 cards."
+    puts "Welcome! You're playing with #{deck.count} cards."
     puts "---------------------------"
   end
 
