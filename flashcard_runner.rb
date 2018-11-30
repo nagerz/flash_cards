@@ -49,5 +49,5 @@ round.end
 puts "You had #{round.number_correct} correct guesses out of #{round.turns.count} for a total score of #{round.percent_correct}%."
 #Prints results by category (for any and all card categories).
 categories_array.each do |cat|
-  puts "#{cat} - #{round.percent_correct_by_category(cat)}% correct".delete!("\n")
+  puts "#{cat} - #{round.percent_correct_by_category(cat)}% correct. (#{round.number_correct_by_category(cat)} out of #{round.deck.cards_in_category(cat).count})".delete!("\n")
 end
