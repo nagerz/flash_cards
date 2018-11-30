@@ -1,9 +1,9 @@
-require './lib/card'
+#require './lib/card'
 require './lib/deck'
 require './lib/round'
-require './lib/turn'
+#require './lib/turn'
 require './lib/card_generator'
-require "pry"
+#require "pry"
 
 #Unused card inputs. Can use if no card text file supplied.
 # card_1 = Card.new("What is 5 + 5?", "10", :STEM)
@@ -46,8 +46,7 @@ puts ""
 #Ends the round after all cards have been completed with a Game Over statement.
 round.end
 #Prints results
-puts "You had #{round.number_correct} correct guesses out of #{round.turns.count}
-for a total score of #{round.percent_correct}%."
+puts "You had #{round.number_correct} correct guesses out of #{round.turns.count} for a total score of #{round.percent_correct}%."
 #Prints results by category (for any and all card categories).
 categories_array.each do |cat|
   puts "#{cat} - #{round.percent_correct_by_category(cat)}% correct".delete!("\n")
