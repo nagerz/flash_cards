@@ -7,6 +7,7 @@ class CardGenerator
   end
 
   def cards
+    textcards = []
     #text = File.open(@textfile)
     card_substrings = IO.readlines(@textfile)
     card_substrings.each do |n|
