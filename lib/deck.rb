@@ -10,14 +10,9 @@ class Deck
   end
 
   def cards_in_category(category)
-    cards_in_category = []
-    @cards.each do |card|
-      if card.category == category
-        cards_in_category << card
-      end
+    @cards.select do |card|
+      card.category == category
     end
-    #find_all / select methods
-    return cards_in_category
   end
 
 end
