@@ -15,7 +15,8 @@ class CardGenerator
     #create card array, place card arrays in single array which is returned.
     card_substrings.each do |n|
       info_substrings = n.split(",")
-      card = Card.new(info_substrings[0], info_substrings[1], info_substrings[2])
+      #Makes card using each index of previous array. Removes new line from category and converts to symbol.
+      card = Card.new(info_substrings[0], info_substrings[1], info_substrings[2].chomp.to_sym)
       textcards << card
     end
       return textcards

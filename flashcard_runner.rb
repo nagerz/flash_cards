@@ -1,9 +1,6 @@
-#require './lib/card'
 require './lib/deck'
 require './lib/round'
-#require './lib/turn'
 require './lib/card_generator'
-#require "pry"
 
 #Unused card inputs. Can use if no card text file supplied.
 # card_1 = Card.new("What is 5 + 5?", "10", :STEM)
@@ -37,6 +34,7 @@ round.start
 cards.each do
   puts "This is card number #{round.turns.count + 1} out of #{round.deck.count}"
   puts "Question: #{round.current_card.question}?"
+  #If response is a number or other type, turns users guess into a string for comparison.
   guess = gets.chomp.to_s
   puts round.take_turn(guess).feedback
 end
@@ -49,5 +47,5 @@ round.end
 puts "You had #{round.number_correct} correct guesses out of #{round.turns.count} for a total score of #{round.percent_correct}%."
 #Prints results by category (for any and all card categories).
 categories_array.each do |cat|
-  puts "#{cat} - #{round.percent_correct_by_category(cat)}% correct. (#{round.number_correct_by_category(cat)} out of #{round.deck.cards_in_category(cat).count})".delete!("\n")
+  puts "#{cat} - #{round.percent_correct_by_category(cat)}% correct. (#{round.number_correct_by_category(cat)} out of #{round.deck.cards_in_category(cat).count})"
 end
